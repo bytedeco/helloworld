@@ -1,5 +1,5 @@
-#include <helloworld.h>
+#define HELLO_WORLD "Hello World!"
 
-char* getString() {
-  return "Hello world!";
+char* getString(void) {
+  return HELLO_WORLD;
 }
