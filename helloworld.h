@@ -3,4 +3,4 @@
 
 extern char * getHelloWorldMessage(void);
 
-#endif  // helloworld_h__
+#endif // helloworld_h__
