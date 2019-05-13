@@ -4,5 +4,6 @@
 int main(void)
 {
     puts(getHelloWorldMessage());
+    printHelloWorldMessage("Hello world!");
     return 0;
 }
