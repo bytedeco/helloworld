@@ -62,5 +62,9 @@ void printInt(int value) {printf("C int %d\n", value);}
 long long int getLong(){return random_long_long_int(LONG_MIN, LONG_MAX);}
 void printLong(long long int value) {printf("C long = %lld\n", value);}
 
-char * getString(void){return HELLO_WORLD;}
-void printString(char * message) {printf("C String = %s\n", message);}
+char * getAsciiString(void){return HELLO_WORLD;}
+void printAsciiString(char * value) {printf("C AsciiString = %s\n", value);}
+
+wchar_t * getUnicodeString(void){return "";}
+void printUnicodeString(wchar_t * value) {printf("C UnicodeString = %s\n", value);}
+

@@ -21,8 +21,11 @@ extern "C"
     long long int getLong();
     void printLong(long long int value);
 
-    char * getString(void);
-    void printString(char * message);
+    char * getAsciiString(void);
+    void printAsciiString(char * value);
+
+    wchar_t * getUnicodeString(void);
+    void printUnicodeString(wchar_t * value);
 }
 
 #endif // helloworld_h__
