@@ -65,6 +65,6 @@ void printLong(long long int value) {printf("C long = %lld\n", value);}
 char * getAsciiString(void){return HELLO_WORLD;}
 void printAsciiString(char * value) {printf("C AsciiString = %s\n", value);}
 
-wchar_t * getUnicodeString(void){return L"";}
+wchar_t * getUnicodeString(void){return L"\u2191";}
 void printUnicodeString(wchar_t * value) {printf("C UnicodeString = %s\n", value);}
 
