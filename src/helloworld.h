@@ -24,8 +24,7 @@
 #ifndef helloworld_h__
 #define helloworld_h__
 
-extern "C"
-{
+extern "C" {
     bool getBool();
     void printBool(bool value);
 
