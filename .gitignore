@@ -3,6 +3,7 @@ Makefile
 .dirstamp
 libtool
 .libs/
+helloworld_test
 
 # Created by https://www.gitignore.io/api/c,linux,windows,autotools
 # Edit at https://www.gitignore.io/?templates=c,linux,windows,autotools
