@@ -43,23 +43,23 @@ __attribute__ ((destructor)) void fini(void) {
 #define HELLO_WORLD "Hello World!"
 
 char random_char(char min, char max) {
-    return min + (char) (rand() / (double) (RAND_MAX + 1) * (max - min + 1));
+    return min + (char) (rand() / (double) (RAND_MAX) * (max - min + 1));
 }
 
 wchar_t random_wchar_t(wchar_t min, wchar_t max) {
-    return min + (wchar_t) (rand() / (double) (RAND_MAX + 1) * (max - min + 1));
+    return min + (wchar_t) (rand() / (double) (RAND_MAX) * (max - min + 1));
 }
 
 short int random_short_int(short int min, short int max) {
-    return min + (short int) (rand() / (double) (RAND_MAX + 1) * (max - min + 1));
+    return min + (short int) (rand() / (double) (RAND_MAX) * (max - min + 1));
 }
 
 int random_int(int min, int max) {
-    return min + (int) (rand() / (double) (RAND_MAX + 1) * (max - min + 1));
+    return min + (int) (rand() / (double) (RAND_MAX) * (max - min + 1));
 }
 
 long long int random_long_long_int(long long int min, long long int max) {
-    return min + (long long int) (rand() / (double) (RAND_MAX + 1) * (max - min + 1));
+    return min + (long long int) (rand() / (double) (RAND_MAX) * (max - min + 1));
 }
 
 bool getBool() {
@@ -123,5 +123,5 @@ wchar_t * getUnicodeString(void) {
 }
 
 void printUnicodeString(wchar_t * value) {
-    printf("C UnicodeString = %s\n", value);
+    printf("C UnicodeString = %ls\n", value);
 }
