@@ -1,3 +1,5 @@
+Makefile
+.deps/
 
 # Created by https://www.gitignore.io/api/c,linux,windows,autotools
 # Edit at https://www.gitignore.io/?templates=c,linux,windows,autotools
@@ -5,7 +7,6 @@
 ### Autotools ###
 # http://www.gnu.org/software/automake
 
-Makefile
 Makefile.in
 /ar-lib
 /mdate-sh
