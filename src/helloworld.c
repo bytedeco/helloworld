@@ -1,8 +1,32 @@
+/*
+ * Copyright 2019 Matteo Di Giovinazzo.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*
+ * File:   helloworld.c
+ * Author: Matteo Di Giovinazzo
+ *
+ * Created on May 9, 2019, 12:10 PM
+ */
+
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
 #include <wchar.h>
 #include <time.h>
+#include <limits.h>
 
 __attribute__((constructor)) void init(void) {
     srand (time(NULL));
@@ -38,14 +62,8 @@ long long int random_long_long_int(long long int min, long long int max) {
 }
 
 
-bool getBool() {
-    return rand() > RAND_MAX/2 ? true : false;
-}
-
-void printBool(bool value) {
-    printf("C boolean = %s\n", value ? "true" : "false");
-}
-
+bool getBool() {return rand() > RAND_MAX/2 ? true : false;}
+void printBool(bool value) {printf("C boolean = %s\n", value ? "true" : "false");}
 
 char getByte() {return random_char(CHAR_MIN, CHAR_MAX);}
 void printByte(char value) {printf("C byte = %d\n", value);}
@@ -67,4 +85,3 @@ void printAsciiString(char * value) {printf("C AsciiString = %s\n", value);}
 
 wchar_t * getUnicodeString(void){return L"\u2191";}
 void printUnicodeString(wchar_t * value) {printf("C UnicodeString = %s\n", value);}
-

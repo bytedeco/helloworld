@@ -1,0 +1,12 @@
+AC_INIT([HelloWorld], [1.0], [matteodg@gmail.com], [https://github.com/matteodg/helloworld])
+AM_INIT_AUTOMAKE([foreign silent-rules subdir-objects])
+AM_MAINTAINER_MODE([enable])
+
+AC_PROG_CC
+AC_CHECK_HEADERS([stdio.h stdbool.h stdlib.h wchar.h time.h limits.h])
+
+LT_INIT([shared disable-static])
+
+AC_CONFIG_MACRO_DIRS([m4])
+
+AC_OUTPUT(Makefile)
