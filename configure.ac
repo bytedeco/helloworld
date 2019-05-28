@@ -1,5 +1,5 @@
 AC_INIT([HelloWorld], [1.0], [matteodg@gmail.com], [https://github.com/matteodg/helloworld])
-AM_INIT_AUTOMAKE([foreign silent-rules subdir-objects])
+AM_INIT_AUTOMAKE([foreign subdir-objects])
 AM_MAINTAINER_MODE([enable])
 
 AC_PROG_CC

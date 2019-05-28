@@ -1,5 +1,8 @@
 Makefile
 .deps/
+.dirstamp
+libtool
+.libs/
 
 # Created by https://www.gitignore.io/api/c,linux,windows,autotools
 # Edit at https://www.gitignore.io/?templates=c,linux,windows,autotools
