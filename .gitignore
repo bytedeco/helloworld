@@ -14,3 +14,5 @@ tests/.dirstamp
 tests/helloworld_test.o
 autom4te.cache/
 helloworld_test.exe
+Makefile.in
+config.status
