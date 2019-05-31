@@ -10,4 +10,6 @@ libhelloworld_la_SOURCES = src/helloworld.c src/helloworld.h
 libhelloworld_la_CFLAGS = $(AM_CFLAGS)
 libhelloworld_la_LDFLAGS = -no-undefined
 
+include_HEADERS = src/helloworld.h
+
 dist_doc_DATA = README.md
