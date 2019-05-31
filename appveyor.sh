@@ -1,6 +1,6 @@
 #!/bin/bash
 
-whereis aclocal
+find -iname "aclocal*" /
 
 pwd
 
