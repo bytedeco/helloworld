@@ -1,11 +1,10 @@
 #!/bin/bash
-export
 
-echo $PATH
+whereis aclocal
 
-set PATH=/c/$MSYS2_DIR/$MSYSTEM/bin:/c/$MSYS2_DIR/usr/bin:$PATH
+pwd
 
-echo $PATH
+ls -al
 
 aclocal
 autoconf
