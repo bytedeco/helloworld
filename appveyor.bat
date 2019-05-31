@@ -1,6 +1,8 @@
 @echo off
 :: Batch file for building/testing on AppVeyor
 
+echo %APPVEYOR_BUILD_FOLDER%
+
 PATH C:\%MSYS2_DIR%\%MSYSTEM%\bin;C:\%MSYS2_DIR%\usr\bin;%PATH%
 
 bash -lc "aclocal"
