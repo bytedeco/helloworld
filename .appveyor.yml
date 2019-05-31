@@ -12,4 +12,4 @@ environment:
       MSYSTEM: MINGW32
 
 build_script:
-    - '%APPVEYOR_BUILD_FOLDER%\appveyor.bat'
+    - C:\msys64\usr\bin\bash --login -c "$(cygpath ${APPVEYOR_BUILD_FOLDER})/appveyor.sh"
