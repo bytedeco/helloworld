@@ -10,4 +10,4 @@ libhelloworld_la_SOURCES = src/helloworld.c src/helloworld.h
 libhelloworld_la_CFLAGS = $(AM_CFLAGS)
 libhelloworld_la_LDFLAGS = -no-undefined
 
-dist_doc_DATA = README
+dist_doc_DATA = README.md
