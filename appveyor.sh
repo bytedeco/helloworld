@@ -1,12 +1,14 @@
 #!/bin/bash
 
-find -iname "aclocal*" /
+find / -iname "aclocal*"
 
 pwd
 
 ls -al
 
-/c/msys64/usr/bin/pacman --noconfirm --ask 20 --sync --refresh --refresh --sysupgrade --sysupgrade
+PATH=/c/msys64/usr/bin:$PATH
+
+pacman --noconfirm --ask 20 --sync --refresh --refresh --sysupgrade --sysupgrade
 
 aclocal
 autoconf
