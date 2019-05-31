@@ -12,4 +12,4 @@ environment:
       MSYSTEM: MINGW32
 
 build_script:
-    - bash -lc "./appveyor.sh"
+    - C:\msys64\usr\bin\bash --login -c "./appveyor.sh"
