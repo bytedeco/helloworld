@@ -12,4 +12,5 @@ environment:
       MSYSTEM: MINGW32
 
 build_script:
-    - C:\msys64\usr\bin\bash --login -c "$(cygpath ${APPVEYOR_BUILD_FOLDER})/appveyor.sh"
+#    - C:\msys64\usr\bin\bash --login -c "$(cygpath ${APPVEYOR_BUILD_FOLDER})/appveyor.sh"
+    - bash --login -c "$(cygpath ${APPVEYOR_BUILD_FOLDER})/appveyor.sh"
