@@ -10,5 +10,7 @@ environment:
   matrix:
     - PROJ: "helloworld"
       OS: windows-x86
+
+    - PROJ: "helloworld"
       OS: windows-x86_64
 
