@@ -10,3 +10,6 @@ environment:
       MSYS2_ARCH: i686
       MSYS2_DIR: msys64
       MSYSTEM: MINGW32
+
+build_script:
+    - aclocal && autoconf && automake --add-missing && ./configure --prefix=`pwd`/build && make && make distcheck
