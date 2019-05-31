@@ -1,7 +1,10 @@
 #!/bin/bash
 
-find / -iname "aclocal*"
+# working dir is /home/appveyor
+echo ${APPVEYOR_BUILD_FOLDER}
 
+CYGPATH_APPVEYOR_BUILD_FOLDER=`cygpath ${APPVEYOR_BUILD_FOLDER}`
+cd $CYGPATH_APPVEYOR_BUILD_FOLDER
 pwd
 
 ls -al
