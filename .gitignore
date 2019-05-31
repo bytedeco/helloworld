@@ -1,0 +1,15 @@
+.libs/
+Makefile
+config.log
+helloworld-1.0.tar.gz
+helloworld_test
+libhelloworld.la
+libtool
+src/.deps/
+src/.dirstamp
+src/.libs/
+src/libhelloworld_la-helloworld.lo
+tests/.deps/
+tests/.dirstamp
+tests/helloworld_test.o
+
