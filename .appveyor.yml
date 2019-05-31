@@ -12,4 +12,4 @@ environment:
       MSYSTEM: MINGW32
 
 build_script:
-    - aclocal && autoconf && automake --add-missing && ./configure --prefix=`pwd`/build && make && make distcheck
+    - bash -lc "pacman --noconfirm --noprogressbar -S --needed mingw-w64-%MSYS2_ARCH%-{jansson,libxml2,libyaml} && aclocal && autoconf && automake --add-missing && ./configure --prefix=`pwd`/build && make && make distcheck"
