@@ -1,2 +1,14 @@
+sudo: false
+
 language: c
+
+script: aclocal && autoconf && automake --add-missing && ./configure --prefix=`pwd`/build && make && make distcheck
+
+compiler:
+  - clang
+  - gcc
+
+os:
+  - linux
+  - osx
 

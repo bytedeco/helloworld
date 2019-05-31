@@ -12,4 +12,4 @@ src/libhelloworld_la-helloworld.lo
 tests/.deps/
 tests/.dirstamp
 tests/helloworld_test.o
-
+autom4te.cache/
