@@ -11,9 +11,6 @@ matrix:
     before_install:
     #- choco install -r --no-progress -y msys2
     - export PATH=$PATH:/c/tools/msys64/usr/bin/
-    - pacman-key --init
-    - pacman-key --populate msys2
-    - pacman-key --refresh-keys
     - pacman -Syu --force
     - pacman -S --force --noconfirm --needed base-devel msys2-devel
 
