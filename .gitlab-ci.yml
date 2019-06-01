@@ -1,11 +1,18 @@
-image: gcc
 
-before_script:
-  - apt update && apt -y install make autoconf
+.build_template: &build_definition
+    script:
+        - ./autogen.sh
+        - ./configure --prefix=`pwd`/build
+        - make distcheck
 
-build:
-  stage: build
-  script:
-    - ./configure --prefix=`pwd`/build
-    - make
-    - make distcheck
+build:linux:
+    image: gcc
+    stage: build
+    before_script:
+        - apt update && apt -y install make autoconf
+    <<: *build_definition
+
+build:windows:
+    image: mback2k/windows-buildbot-msys2
+    stage: build
+    <<: *build_definition
