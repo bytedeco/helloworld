@@ -1,5 +1,5 @@
 AM_CFLAGS = -g -Wall -fPIC
-
+ACLOCAL_AMFLAGS = -I m4
 
 bin_PROGRAMS = helloworld_test
 helloworld_test_SOURCES = tests/helloworld_test.c
