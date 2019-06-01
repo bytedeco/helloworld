@@ -1,9 +1,5 @@
 language: c
 
-compiler:
-  - clang
-  - gcc
-
 matrix:
   include:
   - os: osx
