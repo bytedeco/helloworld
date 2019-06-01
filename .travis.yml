@@ -9,7 +9,7 @@ matrix:
   - os: windows
     env: OS_BUILD=windows
     before_install:
-    #- choco install -r --no-progress -y msys2
+    - choco install -r --no-progress -y msys2
     - export PATH=$PATH:/c/tools/msys64/usr/bin/
     - pacman -Syu --force
     - pacman -S --force --noconfirm --needed base-devel msys2-devel
