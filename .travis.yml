@@ -1,8 +1,4 @@
-sudo: false
-
 language: c
-
-script: aclocal && autoconf && automake --add-missing && ./configure --prefix=`pwd`/build && make && make distcheck
 
 compiler:
   - clang
@@ -11,4 +7,6 @@ compiler:
 os:
   - linux
   - osx
+  - windows
 
+script: ./autogen.sh && ./configure --prefix=`pwd`/build && make distcheck
