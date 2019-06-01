@@ -14,7 +14,9 @@ matrix:
     env: OS_BUILD=windows
     before_install:
     - choco install -r --no-progress -y msys2
+    - export PATH=$PATH:/c/tools/msys64/usr/bin/
     - pacman -S --needed base-devel msys2-devel
 
 
-script: ./autogen.sh && ./configure --prefix=`pwd`/build && make distcheck
+script:
+  - ./autogen.sh && ./configure --prefix=`pwd`/build && make distcheck
