@@ -1,0 +1,11 @@
+image: gcc
+
+before_script:
+  - apt update && apt -y install make autoconf
+
+build:
+  stage: build
+  script:
+    - ./configure --prefix=`pwd`/build
+    - make
+    - make distcheck
