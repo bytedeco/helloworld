@@ -1,4 +1,3 @@
-
 .build_template: &build_definition
     script:
         - ./autogen.sh
@@ -13,6 +12,7 @@ build:linux:
     <<: *build_definition
 
 build:windows:
-    image: mback2k/windows-buildbot-msys2
+    #image: mback2k/windows-buildbot-msys2
+    image: stefanscherer/msys2
     stage: build
     <<: *build_definition
