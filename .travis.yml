@@ -10,21 +10,10 @@ matrix:
     env: OS_BUILD=windows
     before_install:
     - choco install -r --no-progress -y msys2
-    - export PATH=$PATH:/c/tools/msys64/usr/bin/
+    # HACK: Ensure that msys64 comes first, as otherwise libtool won't work
+    - export PATH=/c/tools/msys64/usr/bin/:$PATH
     # Calling pacman via a powershell script
     - powershell -executionpolicy bypass "pacman -Syu --noconfirm --needed base-devel msys2-devel"
-    # Fix the environment for autotools to actually work
-    - ln -s /c/tools/msys64/usr/share/autoconf* /usr/share/
-    - ln -s /c/tools/msys64/usr/share/automake* /usr/share/
-    - ln -s /c/tools/msys64/usr/share/aclocal* /usr/share/
-    - ln -s /c/tools/msys64/usr/share/libtool* /usr/share/
-    - ln -s /c/tools/msys64/usr/share/pkgconfig /usr/share/
-    - ln -s /c/tools/msys64/usr/bin/autom4te /usr/bin/
-    - ln -s /c/tools/msys64/usr/bin/autoconf /usr/bin/
-    - ln -s /c/tools/msys64/usr/bin/autoheader /usr/bin/
-    - ln -s /c/tools/msys64/usr/bin/m4 /usr/bin/
-    # HACK: Ensure that msys64 comes first, as otherwise libtool won't work
-    - PATH=/c/tools/msys64/usr/bin/:$PATH
     - export CONFIG_SHELL=/usr/bin/bash.exe
 
 script:
