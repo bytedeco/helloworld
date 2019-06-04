@@ -10,11 +10,9 @@ matrix:
     env: OS_BUILD=windows
     before_install:
     - choco install -r --no-progress -y msys2
-    # HACK: Ensure that msys64 comes first, as otherwise libtool won't work
-    - export PATH=/c/tools/msys64/usr/bin/:$PATH
-    # Calling pacman via a powershell script
-    - powershell -executionpolicy bypass "pacman -Syu --noconfirm --needed base-devel msys2-devel"
-    - export CONFIG_SHELL=/usr/bin/bash.exe
+    - refreshenv
+    - set PATH=C:\tools\msys64\usr\bin;%PATH%
+    - C:\tools\msys64\usr\bin\pacman -Syu --noconfirm --needed base-devel msys2-devel
 
 script:
     - ./autogen.sh
