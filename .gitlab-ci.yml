@@ -15,4 +15,7 @@ build:windows:
     #image: mback2k/windows-buildbot-msys2
     image: rwgrim/msys2-cross
     stage: build
+    before_script:
+        - pacman --noconfirm -Suy
+        - pacman --noconfirm -S --needed base-devel
     <<: *build_definition
