@@ -1,6 +1,6 @@
 .build_template: &build_definition
     script:
-        - ./autogen.sh
+        #- ./autogen.sh
         - ./configure --prefix=`pwd`/build
         - make distcheck
 
@@ -13,8 +13,7 @@ build:linux:
 
 build:windows:
     #image: mback2k/windows-buildbot-msys2
-    #image: rwgrim/msys2-cross
-    image: mizarjp/winci-msys2
+    image: rwgrim/msys2-cross
     stage: build
     before_script:
         - pacman --noconfirm -Suy
