@@ -24,7 +24,11 @@
 #ifndef helloworld_h__
 #define helloworld_h__
 
+
+#ifdef __cplusplus
 extern "C" {
+#endif
+
     bool getBool();
     void printBool(bool value);
 
@@ -48,6 +52,9 @@ extern "C" {
 
     wchar_t * getUnicodeString(void);
     void printUnicodeString(wchar_t * value);
+
+#ifdef __cplusplus
 }
+#endif
 
 #endif // helloworld_h__

@@ -2,7 +2,7 @@ AM_CFLAGS = -g -Wall -fPIC
 ACLOCAL_AMFLAGS = -I m4
 
 bin_PROGRAMS = helloworld_test
-helloworld_test_SOURCES = tests/helloworld_test.c
+helloworld_test_SOURCES = tests/helloworld_test.c src/helloworld.h
 helloworld_test_LDADD = libhelloworld.la
 
 lib_LTLIBRARIES = libhelloworld.la

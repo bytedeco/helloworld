@@ -22,34 +22,49 @@
  */
 
 #include <stdio.h>
+#include <stdbool.h>
 #include <stdlib.h>
+#include <wchar.h>
+#include <time.h>
+#include <limits.h>
 
-/*
- * Simple C Test Suite
- */
-
-void test1() {
-    printf("test test 1\n");
-}
-
-void test2() {
-    printf("test test 2\n");
-    printf("%%TEST_FAILED%% time=0 testname=test2 (test) message=error message sample\n");
-}
+#include "../src/helloworld.h"
 
 int main(int argc, char** argv) {
-    printf("%%SUITE_STARTING%% test\n");
-    printf("%%SUITE_STARTED%%\n");
 
-    printf("%%TEST_STARTED%% test1 (test)\n");
-    test1();
-    printf("%%TEST_FINISHED%% time=0 test1 (test) \n");
+    printf("READ -------------------------------------------------\n");
+    bool bool_value = getBool();
+    printBool(bool_value);
+    char byte_value = getByte();
+    printByte(byte_value);
+    wchar_t c = getChar();
+    printChar(c);
+    short int s = getShort();
+    printShort(s);
+    int i = getInt();
+    printInt(i);
+    long l = getLong();
+    printLong(l);
+    char* a = getAsciiString();
+    printAsciiString(a);
+    wchar_t* u = getUnicodeString();
+    printUnicodeString(u);
 
-    printf("%%TEST_STARTED%% test2 (test)\n");
-    test2();
-    printf("%%TEST_FINISHED%% time=0 test2 (test) \n");
-
-    printf("%%SUITE_FINISHED%% time=0\n");
+    printf("WRITE ------------------------------------------------\n");
+    printBool(true);
+    printBool(false);
+    printByte(CHAR_MIN);
+    printByte(CHAR_MAX);
+    printChar(WCHAR_MIN);
+    printChar(WCHAR_MAX);
+    printShort(SHRT_MIN);
+    printShort(SHRT_MAX);
+    printInt(INT_MIN);
+    printInt(INT_MAX);
+    printLong(LONG_MIN);
+    printLong(LONG_MAX);
+    printAsciiString("Hello ASCII string!");
+    printUnicodeString(L"Hello Unicode string!");
 
     return (EXIT_SUCCESS);
 }
