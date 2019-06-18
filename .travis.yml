@@ -10,7 +10,7 @@ matrix:
     env: OS_BUILD=windows
     before_install:
     - choco install -r --no-progress -y msys2
-    - refreshenv
+    - Update-SessionEnvironment
     - set PATH=C:\tools\msys64\usr\bin;%PATH%
     - C:\tools\msys64\usr\bin\pacman -Syu --noconfirm --needed base-devel msys2-devel
 
