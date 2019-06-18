@@ -13,6 +13,6 @@ build:linux:
 
 build:windows:
     #image: mback2k/windows-buildbot-msys2
-    image: stefanscherer/msys2
+    image: rwgrim/msys2-cross
     stage: build
     <<: *build_definition
