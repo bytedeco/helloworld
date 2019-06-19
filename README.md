@@ -34,7 +34,7 @@ int main(int argc, char** argv) {
     wchar_t* u = getUnicodeString();
     printUnicodeString(u);
 
-    System.out.println("WRITE ------------------------------------------------");
+    printf("WRITE ------------------------------------------------\n");
     printBool(true);
     printBool(false);
     printByte(CHAR_MIN);
