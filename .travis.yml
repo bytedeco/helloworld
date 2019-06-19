@@ -6,13 +6,13 @@ matrix:
     env: OS_BUILD=osx
   - os: linux
     env: OS_BUILD=linux
-  - os: windows
-    env: OS_BUILD=windows
-    before_install:
-    - choco install -r --no-progress -y msys2
-    - Update-SessionEnvironment
-    - set PATH=C:\tools\msys64\usr\bin;%PATH%
-    - C:\tools\msys64\usr\bin\pacman -Syu --noconfirm --needed base-devel msys2-devel
+#  - os: windows
+#    env: OS_BUILD=windows
+#    before_install:
+#    - choco install -r --no-progress -y msys2
+#    - Update-SessionEnvironment
+#    - set PATH=C:\tools\msys64\usr\bin;%PATH%
+#    - C:\tools\msys64\usr\bin\pacman -Syu --noconfirm --needed base-devel msys2-devel
 
 script:
     - ./autogen.sh
