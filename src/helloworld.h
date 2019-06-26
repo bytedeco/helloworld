@@ -47,11 +47,34 @@ extern "C" {
     long long int getLong();
     void printLong(long long int value);
 
-    char * getAsciiString(void);
-    void printAsciiString(char * value);
+    char * getUtf8String(void);
+    void printUtf8String(char * value);
 
-    wchar_t * getUnicodeString(void);
-    void printUnicodeString(wchar_t * value);
+
+    struct Person {
+        char *firstname;
+        char *lastname;
+    };
+
+    typedef struct Person PersonType;
+    typedef struct Person * PersonTypePtr;
+
+
+    // by value
+    struct Person getPerson();
+    void printPerson (struct Person p);
+
+    // by pointer
+    struct Person *getPersonPtr();
+    void printPersonPtr (struct Person* pp);
+
+    // by value with a defined type
+    PersonType getPersonType();
+    void printPersonType (PersonType pt);
+
+    // by pointer with a defined type
+    PersonTypePtr getPersonTypePtr();
+    void printPersonTypePtr(PersonTypePtr ptp);
 
 #ifdef __cplusplus
 }

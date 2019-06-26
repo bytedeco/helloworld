@@ -27,7 +27,6 @@
 #include <wchar.h>
 #include <time.h>
 #include <limits.h>
-
 #include "../src/helloworld.h"
 
 int main(int argc, char** argv) {
@@ -45,10 +44,20 @@ int main(int argc, char** argv) {
     printInt(i);
     long l = getLong();
     printLong(l);
-    char* a = getAsciiString();
-    printAsciiString(a);
-    wchar_t* u = getUnicodeString();
-    printUnicodeString(u);
+    char* a = getUtf8String();
+    printUtf8String(a);
+
+    struct Person p = getPerson();
+    printPerson(p);
+
+    struct Person *pp = getPersonPtr();
+    printPersonPtr(pp);
+
+    PersonType pt = getPersonType();
+    printPersonType(pt);
+
+    PersonTypePtr ptp = getPersonTypePtr();
+    printPersonTypePtr(ptp);
 
     printf("WRITE ------------------------------------------------\n");
     printBool(true);
@@ -63,8 +72,27 @@ int main(int argc, char** argv) {
     printInt(INT_MAX);
     printLong(LONG_MIN);
     printLong(LONG_MAX);
-    printAsciiString("Hello ASCII string!");
-    printUnicodeString(L"Hello Unicode string!");
+    printUtf8String(u8"Hello UTF-8 z\u00df\u6c34\U0001F34C string!");
+
+    struct Person p1;
+    p1.firstname = "John";
+    p1.lastname = "Doe";
+    printPerson(p1);
+
+    struct Person *pp1 = (struct Person *) malloc(sizeof(struct Person));
+    pp1->firstname = "John";
+    pp1->lastname = "Doe";
+    printPersonPtr(pp1);
+
+    PersonType pt1;
+    pt1.firstname = "John";
+    pt1.lastname = "Doe";
+    printPersonType(pt1);
+
+    PersonTypePtr ptr1 = (PersonTypePtr) malloc(sizeof(PersonType));
+    ptr1->firstname = "John";
+    ptr1->lastname = "Doe";
+    printPersonTypePtr(ptr1);
 
     return (EXIT_SUCCESS);
 }

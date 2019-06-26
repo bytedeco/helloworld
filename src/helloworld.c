@@ -24,18 +24,20 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <string.h>
 #include <wchar.h>
 #include <time.h>
 #include <limits.h>
+#include "helloworld.h"
 
 __attribute__ ((constructor)) void init(void) {
     srand(time(NULL));
     setbuf(stdout, NULL);
-    printf("Loaded\n");
+    printf("Loaded helloworld library\n");
 }
 
 __attribute__ ((destructor)) void fini(void) {
-    printf("Unloaded\n");
+    printf("Unloaded helloworld library\n");
 }
 
 
@@ -62,6 +64,7 @@ long long int random_long_long_int(long long int min, long long int max) {
     return min + (long long int) (rand() / (double) (RAND_MAX) * (max - min + 1));
 }
 
+
 bool getBool() {
     return rand() > RAND_MAX / 2 ? true : false;
 }
@@ -69,6 +72,7 @@ bool getBool() {
 void printBool(bool value) {
     printf("C boolean = %s\n", value ? "true" : "false");
 }
+
 
 char getByte() {
     return random_char(CHAR_MIN, CHAR_MAX);
@@ -78,6 +82,7 @@ void printByte(char value) {
     printf("C byte = %d\n", value);
 }
 
+
 wchar_t getChar() {
     return random_wchar_t(WCHAR_MIN, WCHAR_MAX);
 }
@@ -85,6 +90,7 @@ wchar_t getChar() {
 void printChar(wchar_t value) {
     printf("C char = \\u%04X\n", value);
 }
+
 
 short int getShort() {
     return random_short_int(SHRT_MIN, SHRT_MAX);
@@ -94,6 +100,7 @@ void printShort(short int value) {
     printf("C short = %d\n", value);
 }
 
+
 int getInt() {
     return random_int(INT_MIN, INT_MAX);
 }
@@ -101,6 +108,7 @@ int getInt() {
 void printInt(int value) {
     printf("C int %d\n", value);
 }
+
 
 long long int getLong() {
     return random_long_long_int(LONG_MIN, LONG_MAX);
@@ -110,18 +118,82 @@ void printLong(long long int value) {
     printf("C long = %lld\n", value);
 }
 
-char * getAsciiString(void) {
-    return HELLO_WORLD;
+
+char * getUtf8String() {
+    char * tmp = u8"Hello UTF-8 z\u00df\u6c34\U0001F34C string!";
+    char * str = (char *) malloc(sizeof(char) * (strlen(tmp) + 1));
+    strcpy(str, tmp);
+    return str;
 }
 
-void printAsciiString(char * value) {
-    printf("C AsciiString = %s\n", value);
+void printUtf8String(char * value) {
+    printf("C UTF-8 String = %s\n", value);
 }
 
-wchar_t * getUnicodeString(void) {
-    return L"\u2191";
+
+struct Person getPerson() {
+    struct Person p;
+    char *firstname = "John";
+    char *lastname = "Doe";
+    p.firstname = (char *) malloc( sizeof(char) * (strlen(firstname) + 1));
+    p.lastname = (char *) malloc( sizeof(char) * (strlen(lastname) + 1));
+    strcpy(p.firstname, firstname);
+    strcpy(p.lastname, lastname);
+    return p;
 }
 
-void printUnicodeString(wchar_t * value) {
-    printf("C UnicodeString = %ls\n", value);
+void printPerson(struct Person p) {
+    printf("Person.firstname = %s\n", p.firstname);
+    printf("Person.lastname  = %s\n", p.lastname);
+}
+
+
+struct Person *getPersonPtr() {
+    struct Person *pp = (struct Person *) malloc(sizeof(struct Person));
+    char *firstname = "John";
+    char *lastname = "Doe";
+    pp->firstname = (char *) malloc( sizeof(char) * (strlen(firstname) + 1));
+    pp->lastname = (char *) malloc( sizeof(char) * (strlen(lastname) + 1));
+    strcpy(pp->firstname, firstname);
+    strcpy(pp->lastname, lastname);
+    return pp;
+}
+
+void printPersonPtr(struct Person* pp) {
+    printf("Person->firstname = %s\n", pp->firstname);
+    printf("Person->lastname  = %s\n", pp->lastname);
+}
+
+
+PersonType getPersonType() {
+    PersonType pt;
+    char *firstname = "John";
+    char *lastname = "Doe";
+    pt.firstname = (char *) malloc(sizeof(char) * (strlen(firstname) + 1));
+    pt.lastname = (char *) malloc(sizeof(char) * (strlen(lastname) + 1));
+    strcpy(pt.firstname, firstname);
+    strcpy(pt.lastname, lastname);
+    return pt;
+}
+
+void printPersonType(PersonType pt) {
+    printf("PersonType.firstname = %s\n", pt.firstname);
+    printf("PersonType.lastname  = %s\n", pt.lastname);
+}
+
+
+PersonTypePtr getPersonTypePtr() {
+    PersonTypePtr ptp = (PersonTypePtr) malloc(sizeof(PersonType));
+    char *firstname = "John";
+    char *lastname = "Doe";
+    ptp->firstname = (char *) malloc( sizeof(char) * (strlen(firstname) + 1));
+    ptp->lastname = (char *) malloc( sizeof(char) * (strlen(lastname) + 1));
+    strcpy(ptp->firstname, firstname);
+    strcpy(ptp->lastname, lastname);
+    return ptp;
+}
+
+void printPersonTypePtr(PersonTypePtr ptp) {
+    printf("PersonTypePtr->firstname = %s\n", ptp->firstname);
+    printf("PersonTypePtr->lastname  = %s\n", ptp->lastname);
 }
