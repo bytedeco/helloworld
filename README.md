@@ -6,6 +6,7 @@
 
 A simple dynamic library used to show an example of how to write a preset for JavaCPP.
 
+The [helloworld preset](https://github.com/bytedeco/javacpp-presets/tree/helloworld) shows some examples on how to build a preset using JavaCPP.
 
 # Example
 ```c
